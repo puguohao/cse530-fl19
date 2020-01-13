@@ -1,0 +1,9 @@
+Did not pass testhfMultiPage(), but with some work on it. (-2 points)
+
+The reason why your code does not work is whenever you are checking if the page has a slot, 
+you loop from zero to the header size. However, in your calculation, your header size is 106, which 
+is much bigger than the number of slots size which is 30, so you get index out of bound exception.
+To fix this, you can loop from zero to the number of slots instead of the header size because that
+is the total tuple size that can be contained in a page.
+
+98/100
